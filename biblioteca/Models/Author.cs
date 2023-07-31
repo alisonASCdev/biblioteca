@@ -11,8 +11,6 @@ namespace biblioteca.Models
         [StringLength(50)]
         [Column("AuthorName")]
         public string? Name { get; set; }
-        [Required]
-        [StringLength(50)]
 
     }
 }

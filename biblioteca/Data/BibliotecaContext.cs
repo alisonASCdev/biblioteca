@@ -1,13 +1,23 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using biblioteca.Models;
 
-namespace biblioteca.data
+namespace biblioteca.Data
 {
-    public class BibliotecaContext: DbContext
+    public class bibliotecaContext : DbContext
     {
-        public BibliotecaContext(DbContextOptions<BibliotecaContext> options) : base(options)
+        public bibliotecaContext (DbContextOptions<bibliotecaContext> options)
+            : base(options)
         {
-            
         }
+
+        public DbSet<Book> Book { get; set; } = default!;
+        public DbSet<Publisher> Publisher { get; set; } = default!;
+
+        public DbSet<Author> Author { get; set; } = default!;
+
     }
 }
